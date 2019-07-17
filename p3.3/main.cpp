@@ -1,15 +1,76 @@
-//
-//  main.cpp
-//  p3.3
-//
-//  Created by Sergio campos on 7/17/19.
-//  Copyright © 2019 Sergio campos. All rights reserved.
-//
+/*
+ •• P3.3
+ Write a program that takes user input describing a playing card in the following shorthand notation:
+ 
+ A
+ Ace
+ 2 ... 10
+ Card values
+ J
+ Jack
+ Q
+ Queen
+ K
+ King
+ D
+ Diamonds
+ H
+ Hearts
+ S
+ Spades
+ C
+ Clubs
+ Your program should print the full description of the card. For example,
+ 
+ Enter the card notation: QS
+ Queen of Spades
+ */
 
 #include <iostream>
+#include <string>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+using namespace std;
+
+int main()
+{
+    cout << "Enter the card notation: ";
+    string card;
+    cin >> card;
+    string number = card.substr(0, 1);
+    string suit = card. substr(1, 1);
+    
+    if (suit == "D")
+    {
+        suit = "Diamonds";
+    }
+    else if (suit == "C")
+    {
+        suit = "Clubs";
+    }
+    else if (suit == "H")
+    {
+        suit = "Hearts";
+    }
+    else if (suit == "S")
+    {
+        suit = "Spades";
+    }
+    if (number == "1")
+    {
+        number = "Ace";
+    }
+    else if (number == "J")
+    {
+        number = "Jack";
+    }
+    else if (number == "Q")
+    {
+        number = "Queen";
+    }
+    else if (number == "K")
+    {
+        number = "King";
+    }
+    cout << number << " of " << suit << endl;
+    
 }
