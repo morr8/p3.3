@@ -34,11 +34,18 @@ using namespace std;
 int main()
 {
     cout << "Enter the card notation: ";
-    string card;
+    string card, number, suit;
     cin >> card;
-    string number = card.substr(0, 1);
-    string suit = card. substr(1, 1);
-    
+    if (card.length() == 2)
+    {
+        number = card.substr(0, 1);
+        suit = card. substr(1, 1);
+    }
+    else
+    {
+        number = card.substr(0, 2);
+        suit = card. substr(2, 1);
+    }
     if (suit == "D")
     {
         suit = "Diamonds";
